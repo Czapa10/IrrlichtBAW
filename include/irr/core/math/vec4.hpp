@@ -51,6 +51,22 @@ union alignas(16) vec4
 	inline f32x4 getAsRegister() const;
 };
 
+// vec vec operators
+inline vec4 operator+(vec4, vec4);
+inline vec4 operator-(vec4, vec4);
+inline vec4 operator*(vec4, vec4);
+inline vec4 operator/(vec4, vec4);
+inline vec4& operator+=(vec4&, vec4); 
+inline vec4& operator-=(vec4&, vec4); 
+inline vec4& operator*=(vec4&, vec4); 
+inline vec4& operator/=(vec4&, vec4); 
+
+// vec scalar operators
+inline vec4 operator*(vec4, float);
+inline vec4 operator*(float, vec4);
+inline vec4 operator/(vec4, float);
+inline vec4 operator/(float, vec4);
+
 #ifdef IRR_SSE4
 #include "backend/vec4_sse4.inl"
 #endif
